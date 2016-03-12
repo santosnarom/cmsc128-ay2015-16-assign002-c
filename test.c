@@ -2,6 +2,6 @@
 #include "bioinformatics.h"
 
 main(){
-  int x = getSkew("GGCCAC", 4);
+  int x = getMaxSkewN("GGCCAC", 5);
   printf("\n%i\n", x);
 }

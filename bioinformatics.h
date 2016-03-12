@@ -91,3 +91,27 @@ int getSkew(char * str, int n){
   return G-C;
 
 }
+
+int getMaxSkewN(char * str, int n){
+
+  int i = 0;
+  int max = 0;
+
+  if(strlen(str) <= 0){
+    printf("\nError: Invalid string\n");
+    return -1;
+  }
+
+  if(strlen(str) < n){
+    printf("\nError: Index out of bounds\n");
+    return -1;
+  }
+
+  for(i = 0; i < n; i++){
+    if(max < getSkew(str,i + 1))
+      max = getSkew(str,i + 1);
+  }
+
+  return max;
+
+}
