@@ -2,6 +2,6 @@
 #include "bioinformatics.h"
 
 main(){
-  int x = getMinSkewN("GGCCAC", 5);
-  printf("\n%i\n", x);
+  char * x = isValidString("GGCCAC", "GCASS");
+  printf("\n%s\n", x);
 }
