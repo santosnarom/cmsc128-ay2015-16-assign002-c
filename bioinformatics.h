@@ -53,13 +53,41 @@ char * isValidString(char * str, char * alphabet){
 
   for(i = 0; i < strlen(str); i++){
     for(j = 0; j < strlen(alphabet); j++){
-      if(str[i] == alphabet[j]) valid = 1;
+      if(str[i] == alphabet[j]) valid++;
     }
   }
 
+  if(valid > 1)
+    return "Alphabet not unique";
+
   if(valid == 1)
     return "true";
-    
+
   return "false";
+
+}
+
+int getSkew(char * str, int n){
+
+  int G = 0;
+  int C = 0;
+  int i = 0;
+
+  if(strlen(str) <= 0){
+    printf("\nError: Invalid string\n");
+    return -1;
+  }
+
+  if(strlen(str) < n){
+    printf("\nError: Index out of bounds\n");
+    return -1;
+  }
+
+  for(i = 0; i < n; i++){
+    if(str[i] == 'G') G++;
+    if(str[i] == 'C') C++;
+  }
+
+  return G-C;
 
 }

@@ -2,6 +2,6 @@
 #include "bioinformatics.h"
 
 main(){
-  char * x = isValidString("AATATATAGG", "X");
-  printf("\n%s\n", x);
+  int x = getSkew("GGCCAC", 4);
+  printf("\n%i\n", x);
 }
