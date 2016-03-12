@@ -3,7 +3,6 @@
 
 int getHammingDistance(char * str1, char * str2){
 
-  int length = strlen(str1);
   int i = 0;
   int distance = 0;
 
@@ -16,10 +15,32 @@ int getHammingDistance(char * str1, char * str2){
     return -1;
   }
 
-  for(i = 0; i < length; i++){
+  for(i = 0; i < strlen(str1); i++){
     if(str1[i] != str2[i]) distance++;
   }
 
   return distance;
+
+}
+
+int countSubstrPattern(char * original, char * pattern){
+
+  int i = 0, i2 = 0;
+  int j = 0;
+  int count = 0;
+
+  if(strlen(original) < strlen(pattern)) return 0;
+
+  for(i = 0; i < strlen(original); i++){
+    if(original[i] == pattern[0]){
+      i2 = i;
+      for(j = 0; j < strlen(pattern); j++, i2++){
+        if(pattern[j] != original[i2]) break;
+      }
+      if(j == strlen(pattern)) count++;
+    }
+  }
+
+  return count;
 
 }

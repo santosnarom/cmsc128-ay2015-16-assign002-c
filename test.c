@@ -2,6 +2,6 @@
 #include "bioinformatics.h"
 
 main(){
-  int x = getHammingDistance("AACCTT", "GGCCTT");
+  int x = countSubstrPattern("AATATATAGG", "GG");
   printf("\n%i\n", x);
 }
