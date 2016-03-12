@@ -2,6 +2,6 @@
 #include "bioinformatics.h"
 
 main(){
-  int x = countSubstrPattern("AATATATAGG", "GG");
-  printf("\n%i\n", x);
+  char * x = isValidString("AATATATAGG", "X");
+  printf("\n%s\n", x);
 }

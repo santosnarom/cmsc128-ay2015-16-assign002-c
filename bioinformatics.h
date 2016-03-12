@@ -44,3 +44,22 @@ int countSubstrPattern(char * original, char * pattern){
   return count;
 
 }
+
+char * isValidString(char * str, char * alphabet){
+
+  int i = 0;
+  int j = 0;
+  int valid = 0;
+
+  for(i = 0; i < strlen(str); i++){
+    for(j = 0; j < strlen(alphabet); j++){
+      if(str[i] == alphabet[j]) valid = 1;
+    }
+  }
+
+  if(valid == 1)
+    return "true";
+    
+  return "false";
+
+}
